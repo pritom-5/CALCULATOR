@@ -2,14 +2,12 @@ class Calculator {
 	CURRENT_NUMBER: string;
 	PREV_NUMBER: string;
 	CURRENT_OPERATOR: string;
-	IS_FIRST_NUMBER: boolean;
 	OPERATORS: string[];
 
 	constructor() {
 		this.CURRENT_NUMBER = "";
 		this.PREV_NUMBER = "";
 		this.CURRENT_OPERATOR = "";
-		this.IS_FIRST_NUMBER = true;
 		this.OPERATORS = ["+", "-", "x", "/", "=", "%"];
 	}
 
@@ -19,7 +17,6 @@ class Calculator {
 	) {
 		const input_str = String(input);
 
-		//check if it's operator
 		if (type === "operator") {
 			const is_operator_perssed_before_any_value =
 				this.CURRENT_NUMBER === "" && this.PREV_NUMBER === "";
@@ -35,7 +32,9 @@ class Calculator {
 				return;
 			}
 
-			if (this.PREV_NUMBER === "" && input_str !== "=") {
+			const is_asking_result_without_prev_value =
+				this.PREV_NUMBER === "" && input_str !== "=";
+			if (is_asking_result_without_prev_value) {
 				this.PREV_NUMBER = this.CURRENT_NUMBER;
 				this.CURRENT_NUMBER = "";
 				this.CURRENT_OPERATOR = input_str;

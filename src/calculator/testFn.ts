@@ -1,6 +1,6 @@
-function testVal() {
-	console.log("test");
+export function testVal() {
+	return "test";
 }
-function hello() {
+export function hello() {
 	console.log("hello");
 }

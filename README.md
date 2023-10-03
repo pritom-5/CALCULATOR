@@ -24,3 +24,5 @@
 -   show previous_value in the prev_box
 -   show current_value in the main_box
 -
+
+### testing ideas
