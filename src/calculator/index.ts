@@ -10,7 +10,7 @@ class Calculator {
 		this.PREV_NUMBER = "";
 		this.CURRENT_OPERATOR = "";
 		this.IS_FIRST_NUMBER = true;
-		this.OPERATORS = ["+", "-", "x", "/", "="];
+		this.OPERATORS = ["+", "-", "x", "/", "=", "%"];
 	}
 
 	inputValue(
@@ -73,6 +73,9 @@ class Calculator {
 			case "/":
 				this.divide();
 				break;
+			case "%":
+				this.percentage();
+				break;
 
 			case "CE":
 				this.clearEverything();
@@ -85,6 +88,14 @@ class Calculator {
 				this.clearLastDigit();
 				break;
 		}
+	}
+
+	percentage() {
+		const result =
+			(parseFloat(this.PREV_NUMBER) * parseFloat(this.CURRENT_NUMBER)) /
+			100;
+		this.PREV_NUMBER = String(result);
+		this.CURRENT_NUMBER = "";
 	}
 
 	plus() {
