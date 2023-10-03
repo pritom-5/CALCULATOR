@@ -1,9 +1,12 @@
 import calculator from "./index.ts";
 
+export type tType = "number" | "operator" | "clear-operator";
+export type tValue = string | number;
 type tButton = {
-	type: "number" | "operator" | "clear-operator";
-	value: string | number;
+	type: tType;
+	value: tValue;
 };
+
 const buttons: tButton[] = [
 	{ type: "number", value: 1 },
 	{ type: "number", value: 2 },

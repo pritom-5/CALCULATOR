@@ -37,6 +37,10 @@
     - call with "34" CURRENT_NUMBER toBe("34")
     - call with "=" CURRENT_NUMBER toBe("") PREV_NUMBER toBe("46")
 
+### check common userflow for all the operators allowed
+
+    // figure out
+
 ### minus number input
 
     - call with "-" CURRENT_NUMBER toBe("-")

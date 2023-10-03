@@ -1,4 +1,19 @@
-class Calculator {
+import { tType, tValue } from "./render";
+
+interface iCalculator {
+	inputValue: (input: tValue, type: tType) => void;
+	chooseOperation: (operator: string) => void;
+	percentage: () => void;
+	plus: () => void;
+	minus: () => void;
+	multiply: () => void;
+	divide: () => void;
+	clearCurrent: () => void;
+	clearEverything: () => void;
+	clearLastDigit: () => void;
+}
+
+class Calculator implements iCalculator {
 	CURRENT_NUMBER: string;
 	PREV_NUMBER: string;
 	CURRENT_OPERATOR: string;
@@ -11,10 +26,7 @@ class Calculator {
 		this.OPERATORS = ["+", "-", "x", "/", "=", "%"];
 	}
 
-	inputValue(
-		input: string | number,
-		type: "number" | "operator" | "clear-operator"
-	) {
+	inputValue(input: tValue, type: tType) {
 		const input_str = String(input);
 
 		if (type === "operator") {
