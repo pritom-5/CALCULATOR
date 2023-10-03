@@ -18,10 +18,18 @@ class Calculator {
 		const input_str = String(input);
 
 		if (type === "operator") {
+			const is_minus_part_of_number =
+				this.CURRENT_NUMBER === "" && input_str === "-";
+
 			const is_operator_perssed_before_any_value =
 				this.CURRENT_NUMBER === "" && this.PREV_NUMBER === "";
 			const is_operator_pressed_before_current =
 				this.CURRENT_NUMBER === "";
+
+			if (is_minus_part_of_number) {
+				this.CURRENT_NUMBER += input_str;
+				return;
+			}
 
 			if (is_operator_perssed_before_any_value) {
 				return;
