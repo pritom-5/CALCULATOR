@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite + TS</title>
+		<script type="module" src="./src/calculator/render.ts"></script>
+		<script type="module" src="./src/calculator/index.ts"></script>
+	</head>
+	<body>
+		<div id="result-container">
+			<div id="previous-container">
+				previous: <span id="previous"></span>
+			</div>
+			<div id="current-container">
+				current: <span id="current"></span>
+			</div>
+			<div id="operator-container">
+				operator: <span id="operator"></span>
+			</div>
+			<span id="current"></span>
+		</div>
+		<div id="calulator-body"></div>
+	</body>
+</html>
